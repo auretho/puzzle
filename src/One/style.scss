@@ -1,12 +1,17 @@
 .one{
-  height: 100vh;
+  flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  animation: fadeOut .5s ease-in-out;
 
+  @keyframes fadeOut {
+    0% {opacity: 0}
+    100% {opacity: 1}  
+  }
+  
   &-circle{
     height: 100px;
     width: 100px;

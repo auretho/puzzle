@@ -2,18 +2,17 @@ import React from 'react';
 import './style.scss';
 
 const Three = ({letters}) => {
-  const wrapper = document.querySelectorAll('.three-wrapper')
-  const wrapperArr = [].slice.call(wrapper);
-
-
   const handleTwoCircles = (evt) => {
     const wrapperId = evt.target.parentElement.id.split('-')[1];
     const emptyCircle = document.querySelectorAll('.three-circle-empty');
     const emptyCircleArr = [].slice.call(emptyCircle);
-
     emptyCircleArr.map(el => {
       if(el.id === wrapperId){
         el.style.visibility = "hidden";
+        evt.target.previousSibling.classList.add('three-circle-letter-animated')  
+        setTimeout(() => {
+          evt.target.previousSibling.classList.remove('three-circle-letter-animated')  
+        }, 500);    
       }
       else{
         el.style.visibility = "";
