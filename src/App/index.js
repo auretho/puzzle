@@ -8,6 +8,7 @@ import Three from '../Three';
 
 class App extends React.Component {  
   state = {
+    letters: ['t', 'r', 'o', 'i', 's']
   };
 
   
@@ -18,7 +19,9 @@ class App extends React.Component {
         <Route exact path="/" component={Welcome}/>
         <Route path="/un" component={One}/>
         <Route path="/deux" component={Two}/>
-        <Route path="/trois" component={Three}/>
+        <Route path="/trois">
+          <Three letters={this.state.letters}/>
+        </Route> 
 
       </Switch>
     </div>
