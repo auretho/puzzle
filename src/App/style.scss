@@ -21,9 +21,23 @@
 .item-animated{
   animation: fadeOut .5s ease-in-out;
 }
+// @keyframes fadeInOut {
+//   0% {opacity: 0}
+//   100% {opacity: 1}  
+//   // 100% {opacity: 0}  
+// }
+
+.full-container{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  animation: fadeOut .5s ease-in-out;
+
+}
+
 @keyframes fadeOut {
   0% {opacity: 0}
-  50% {opacity: 1}  
-  100% {opacity: 0}  
-
+  100% {opacity: 1}  
 }

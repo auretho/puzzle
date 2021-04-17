@@ -13,6 +13,11 @@ import Five from '../Five';
 import Six from '../Six';
 import InputSix from '../Six/Input';
 import Seven from '../Seven';
+import Eight from '../Eight';
+import InputEight from '../Eight/Input';
+import Nine from '../Nine';
+import InputNine from '../Nine/Input';
+import Ten from '../Ten';
 
 
 
@@ -40,7 +45,39 @@ class App extends React.Component {
         left: '750px'
       },
     ],
-    seven: ['m', 'e', 'm', 'o', 'i', 'r', 'e']
+    seven: ['m', 'e', 'm', 'o', 'i', 'r', 'e'],
+    nine: [
+      {
+        item: "c", 
+        pos: 'absolute',
+        top: '50px',
+        left: '420px'
+      },
+      {
+        item: "r", 
+        pos: 'absolute',
+        top: '320px',
+        left: '240px'
+      },
+      {
+        item: "o", 
+        pos: 'absolute',
+        top: '180px',
+        left: '750px'
+      },
+      {
+        item: "i", 
+        pos: 'absolute',
+        top: '280px',
+        left: '750px'
+      },
+      {
+        item: "x", 
+        pos: 'absolute',
+        top: '200px',
+        left: '350px'
+      },
+    ],
   }
 
   handleInputChange = (text) => {
@@ -90,6 +127,16 @@ class App extends React.Component {
         <Route path="/sept">
           <Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick}/>
         </Route>
+        <Route path="/huit">
+          <Eight />
+          <InputEight input={this.state.input} handleInputChange={this.handleInputChange}/>
+        </Route>
+        <Route path="/neuf">
+          <Nine nine={this.state.nine} handleFadingCircleClick={this.handleFadingCircleClick}/>
+          <InputNine input={this.state.input} handleInputChange={this.handleInputChange}/>
+        </Route>  
+        <Route path="/dix" component={Ten}/>
+    
       </Switch>
 
     </div>
