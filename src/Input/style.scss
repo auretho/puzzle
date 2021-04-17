@@ -6,6 +6,9 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 3em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
     &-icon{
         position: relative;
@@ -21,6 +24,7 @@
         text-transform: uppercase;
         text-align: center;
         color: grey;
+        padding: .3em;
     }
 
     &-text:focus, input:focus{

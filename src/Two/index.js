@@ -28,9 +28,9 @@ const Two = () => {
   return(
     <div className="two">
       <div className="two-container">
-        <div className="two-circle" id="1" onClick={handleTwoCircles}/>
-        <div className="two-circle" id="2" onClick={handleTwoCircles}/>
-        <div className="two-circle" id="3" onClick={handleTwoCircles}/>
+        <div className="two-circle grey-circle" id="1" onClick={handleTwoCircles}/>
+        <div className="two-circle grey-circle" id="2" onClick={handleTwoCircles}/>
+        <div className="two-circle grey-circle" id="3" onClick={handleTwoCircles}/>
       </div>
     </div>
   )

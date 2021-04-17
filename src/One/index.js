@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const One = () => (
     <div className="one">
-      <Link to="/deux" className="one-circle"/>
+      <Link to="/deux" className="grey-circle one-circle"/>
     </div>
 )
 

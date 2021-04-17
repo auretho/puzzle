@@ -10,8 +10,9 @@ const Input = ({input, handleInputChange}) => {
 
   const handleInputSubmit = (evt) => {
     evt.preventDefault();
-    if(input === 'trois'){
+    if(input.toLowerCase() === 'trois'){
       history.push('/quatre');
+      handleInputChange('');
     }
   }
 

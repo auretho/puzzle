@@ -10,12 +10,12 @@ const Three = ({letters}) => {
       if(el.id === wrapperId){
         el.style.visibility = "hidden";
         evt.target.previousSibling.classList.add('three-circle-letter-animated')  
-        setTimeout(() => {
+        return setTimeout(() => {
           evt.target.previousSibling.classList.remove('three-circle-letter-animated')  
         }, 500);    
       }
       else{
-        el.style.visibility = "";
+        return el.style.visibility = "";
       }
     })
   }
@@ -25,8 +25,8 @@ const Three = ({letters}) => {
       <div className="three-container">
         {letters.map((letter, id) => (
         <div className="three-wrapper" onClick={handleTwoCircles} key={id} id={`wrapper-${id}`}>
-          <div className="three-circle three-circle-letter" >{letter}</div>
-          <div className="three-circle three-circle-empty" id={id}></div>
+          <div className="three-circle three-circle-letter grey-circle" >{letter}</div>
+          <div className="three-circle three-circle-empty grey-circle" id={id}></div>
         </div>
         ))}
       </div>
