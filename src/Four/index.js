@@ -33,7 +33,9 @@ const Four = () => {
       }    
     }
     if(circlesArr.length === 5){
-      return history.push('/cinq')
+      setTimeout(() => {
+        return history.push('/cinq')
+      }, 500);
     }
   }
 
