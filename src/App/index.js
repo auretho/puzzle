@@ -12,6 +12,7 @@ import Four from '../Four';
 import Five from '../Five';
 import Six from '../Six';
 import InputSix from '../Six/Input';
+import Seven from '../Seven';
 
 
 
@@ -19,7 +20,7 @@ class App extends React.Component {
   state = {
     input: '',
     letters: ['t', 'r', 'o', 'i', 's'],
-    multiplication: [
+    six: [
       {
         item: 5, 
         pos: 'absolute',
@@ -39,12 +40,31 @@ class App extends React.Component {
         left: '750px'
       },
     ],
+    seven: ['m', 'e', 'm', 'o', 'i', 'r', 'e']
   }
 
   handleInputChange = (text) => {
     this.setState({
       input: text,
     });
+  }
+
+  handleFadingCircleClick = (evt) => {
+    const wrapperId = evt.target.parentElement.id.split('-')[1];
+    const emptyCircle = document.querySelectorAll('.circle-empty');
+    const emptyCircleArr = [].slice.call(emptyCircle);
+    emptyCircleArr.map(el => {
+      if(el.id === wrapperId){
+        el.style.visibility = "hidden";
+        evt.target.previousSibling.classList.add('item-animated')  
+        return setTimeout(() => {
+          evt.target.previousSibling.classList.remove('item-animated')  
+        }, 500);    
+      }
+      else{
+        return el.style.visibility = "";
+      }
+    })
   }
   
   render () {
@@ -58,14 +78,17 @@ class App extends React.Component {
         <Route path="/un" component={One}/>
         <Route path="/deux" component={Two}/>
         <Route path="/trois">
-          <Three letters={this.state.letters}/>
+          <Three letters={this.state.letters} handleFadingCircleClick={this.handleFadingCircleClick}/>
           <InputThree input={this.state.input} handleInputChange={this.handleInputChange}/>
         </Route> 
         <Route path="/quatre" component={Four}/>
         <Route path="/cinq" component={Five}/>
         <Route path="/six">
-          <Six multiplication={this.state.multiplication}/>
+          <Six six={this.state.six} handleFadingCircleClick={this.handleFadingCircleClick}/>
           <InputSix input={this.state.input} handleInputChange={this.handleInputChange}/>
+        </Route>
+        <Route path="/sept">
+          <Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick}/>
         </Route>
       </Switch>
 

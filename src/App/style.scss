@@ -17,3 +17,13 @@
   border-radius: 50%;
   background-color: lightgrey;
 }
+
+.item-animated{
+  animation: fadeOut .5s ease-in-out;
+}
+@keyframes fadeOut {
+  0% {opacity: 0}
+  50% {opacity: 1}  
+  100% {opacity: 0}  
+
+}
