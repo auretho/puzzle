@@ -11,7 +11,7 @@ const Input = ({input, handleInputChange, addLevelToArray}) => {
   const handleInputSubmit = (evt) => {
     evt.preventDefault();
     if(input === "20"){
-      history.push('/puzzle/sept');
+      history.push('/sept');
       addLevelToArray('six')
       handleInputChange('');
     }

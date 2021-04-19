@@ -13,7 +13,7 @@ const Ten = React.memo(({addLevelToArray, stopTimer}) => {
 
   const handleTenKeyPress = (evt) => {
     if(evt.key === "x"){
-      history.push('/puzzle/onze');
+      history.push('/onze');
       addLevelToArray('ten');
       stopTimer();
     }
