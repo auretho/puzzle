@@ -11,7 +11,7 @@ const Input = ({input, handleInputChange, addLevelToArray}) => {
     evt.preventDefault();
     if(input.toLowerCase() === "croix"){
       addLevelToArray('nine')
-      history.push('/dix');
+      history.push('/puzzle/dix');
       handleInputChange('');
     }
   }
