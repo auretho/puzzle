@@ -11,7 +11,7 @@ const Input = ({input, handleInputChange, addLevelToArray}) => {
   const handleInputSubmit = (evt) => {
     evt.preventDefault();
     if(input.toLowerCase() === 'trois'){
-      history.push('/quatre');
+      history.push('/puzzle/quatre');
       handleInputChange('');
       addLevelToArray("three")
     }

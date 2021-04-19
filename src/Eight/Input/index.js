@@ -11,7 +11,7 @@ const Input = ({input, handleInputChange, addLevelToArray}) => {
     evt.preventDefault();
     if(input.toLowerCase() === "memoire"){
       addLevelToArray('eight');
-      history.push('/neuf');
+      history.push('/puzzle/neuf');
       handleInputChange('');
     }
   }

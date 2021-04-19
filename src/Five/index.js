@@ -80,7 +80,7 @@ const Five = React.memo(({addLevelToArray}) => {
     }
     if(circlesArr.length === 5){
       addLevelToArray('five');
-      return history.push('/six');
+      return history.push('/puzzle/six');
     }
   }
 
