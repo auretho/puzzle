@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react'
 import './style.scss';
 
-const Input = ({input, handleInputChange}) => {
+const Input = ({input, handleInputChange, addLevelToArray}) => {
   let history = useHistory();
   const handleChange = (evt) => {
     handleInputChange(evt.target.value);
@@ -13,6 +13,7 @@ const Input = ({input, handleInputChange}) => {
     if(input.toLowerCase() === 'trois'){
       history.push('/quatre');
       handleInputChange('');
+      addLevelToArray("three")
     }
   }
 

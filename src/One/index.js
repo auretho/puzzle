@@ -1,9 +1,9 @@
 import './style.scss';
 import {Link} from 'react-router-dom';
 
-const One = () => (
+const One = ({addLevelToArray}) => (
     <div className="one">
-      <Link to="/deux" className="grey-circle one-circle"/>
+      <Link to="/deux" className="grey-circle one-circle" onClick={() => addLevelToArray('one')}/>
     </div>
 )
 

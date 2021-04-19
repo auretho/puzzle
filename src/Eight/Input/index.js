@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import './style.scss';
 
-const Input = ({input, handleInputChange}) => {
+const Input = ({input, handleInputChange, addLevelToArray}) => {
   let history = useHistory();
   const handleChange = (evt) => {
     handleInputChange(evt.target.value);
@@ -10,6 +10,7 @@ const Input = ({input, handleInputChange}) => {
   const handleInputSubmit = (evt) => {
     evt.preventDefault();
     if(input.toLowerCase() === "memoire"){
+      addLevelToArray('eight');
       history.push('/neuf');
       handleInputChange('');
     }

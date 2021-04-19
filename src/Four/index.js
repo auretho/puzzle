@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 import './style.scss';
 
-const Four = () => {
+const Four = React.memo(({addLevelToArray}) => {
   const history = useHistory();
   const circlesArr = [];
 
@@ -34,7 +34,8 @@ const Four = () => {
     }
     if(circlesArr.length === 5){
       setTimeout(() => {
-        return history.push('/cinq')
+        addLevelToArray('four');
+        return history.push('/cinq');
       }, 500);
     }
   }
@@ -48,6 +49,6 @@ const Four = () => {
       <div className="grey-circle four-circle" onClick={handleCircleClick}></div>
     </div>
   )
-}
+})
 
 export default Four;

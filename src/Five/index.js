@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {useHistory} from 'react-router-dom';
 import './style.scss';
 
-const Five = () => {
+const Five = React.memo(({addLevelToArray}) => {
   const history = useHistory();
   const circlesArr = [];
 
@@ -79,6 +79,7 @@ const Five = () => {
         } 
     }
     if(circlesArr.length === 5){
+      addLevelToArray('five');
       return history.push('/six');
     }
   }
@@ -92,6 +93,6 @@ const Five = () => {
       <div className="grey-circle five-circle" onClick={handleCircleClick}></div>
     </div>
   )
-}
+})
 
 export default Five;

@@ -18,11 +18,13 @@ import InputEight from '../Eight/Input';
 import Nine from '../Nine';
 import InputNine from '../Nine/Input';
 import Ten from '../Ten';
+import Eleven from '../Eleven';
 
 
 
 class App extends React.Component {  
   state = {
+    levels: [],
     input: '',
     letters: ['t', 'r', 'o', 'i', 's'],
     six: [
@@ -51,33 +53,39 @@ class App extends React.Component {
         item: "c", 
         pos: 'absolute',
         top: '50px',
-        left: '420px'
+        left: '620px'
       },
       {
         item: "r", 
         pos: 'absolute',
         top: '320px',
-        left: '240px'
+        left: '380px'
       },
       {
         item: "o", 
         pos: 'absolute',
         top: '180px',
-        left: '750px'
+        left: '950px'
       },
       {
         item: "i", 
         pos: 'absolute',
-        top: '280px',
-        left: '750px'
+        top: '300px',
+        left: '840px'
       },
       {
         item: "x", 
         pos: 'absolute',
-        top: '200px',
-        left: '350px'
+        top: '220px',
+        left: '550px'
       },
     ],
+    timer: '',
+    seconds: 0,
+  }
+
+  addLevelToArray = (newLevel) => {
+    this.state.levels.push(newLevel) // A REVOIR
   }
 
   handleInputChange = (text) => {
@@ -103,40 +111,81 @@ class App extends React.Component {
       }
     })
   }
-  
+
+  updateTimer = () => {
+    const { seconds } = this.state;
+    this.setState({ seconds: seconds + 1 });
+    let hour = Math.floor(seconds / 3600);
+    let min = Math.floor((seconds % 3600) / 60);
+    let secs = seconds % 60;
+    if(hour < 10){
+      hour = "0" + hour;
+    }
+    if(min < 10){
+      min = "0" + min;
+    }
+    if(secs < 10){
+      secs = "0" + secs;
+    }
+    const correctTime = seconds < 3600 ? min + ':' + secs : hour + ":" + min + ':' + secs
+    this.setState({ timer: correctTime });
+  }
+
+  stopTimer = () => {
+    clearInterval(this.timer);
+  }
+
+  componentDidMount() {
+    this.timer = setInterval(this.updateTimer, 1000);
+  }
+
   render () {
+
     return <div className="app">
         <Link to="/">
           <Icon name="chess knight" size="big" className="home-icon" color="grey"/>
         </Link>
 
       <Switch>
-        <Route exact path="/" component={Welcome}/>
-        <Route path="/un" component={One}/>
-        <Route path="/deux" component={Two}/>
+        <Route exact path="/"><Welcome addLevelToArray={this.addLevelToArray} /></Route>
+
+        <Route path='/un'><One addLevelToArray={this.addLevelToArray}/></Route>        
+        
+        <Route path="/deux"><Two addLevelToArray={this.addLevelToArray}/></Route>        
+        
         <Route path="/trois">
           <Three letters={this.state.letters} handleFadingCircleClick={this.handleFadingCircleClick}/>
-          <InputThree input={this.state.input} handleInputChange={this.handleInputChange}/>
+          <InputThree input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route> 
-        <Route path="/quatre" component={Four}/>
-        <Route path="/cinq" component={Five}/>
+        
+        <Route path="/quatre"><Four addLevelToArray={this.addLevelToArray}/></Route>
+        
+        <Route path="/cinq"><Five addLevelToArray={this.addLevelToArray}/></Route>        
+        
         <Route path="/six">
           <Six six={this.state.six} handleFadingCircleClick={this.handleFadingCircleClick}/>
-          <InputSix input={this.state.input} handleInputChange={this.handleInputChange}/>
+          <InputSix input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route>
-        <Route path="/sept">
-          <Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick}/>
-        </Route>
+
+        <Route path="/sept"><Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick} addLevelToArray={this.addLevelToArray}/></Route>
+        
         <Route path="/huit">
           <Eight />
-          <InputEight input={this.state.input} handleInputChange={this.handleInputChange}/>
+          <InputEight input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route>
+        
         <Route path="/neuf">
-          <Nine nine={this.state.nine} handleFadingCircleClick={this.handleFadingCircleClick}/>
-          <InputNine input={this.state.input} handleInputChange={this.handleInputChange}/>
+          <Nine nine={this.state.nine}/>
+          <InputNine input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
+        </Route> 
+
+        <Route path="/dix">
+          <Ten addLevelToArray={this.addLevelToArray} stopTimer={this.stopTimer}/>
+        </Route>    
+
+        <Route path="/onze">
+          <Eleven timer={this.state.timer}/>
         </Route>  
-        <Route path="/dix" component={Ten}/>
-    
       </Switch>
 
     </div>

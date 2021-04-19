@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-bottom: 3em;
     position: absolute;
@@ -12,19 +12,22 @@
 
     &-icon{
         position: relative;
-        top: 0;
-        color: rgb(186, 186, 186);
+        color: rgb(215, 215, 215);
+        padding-bottom: 3em;
     }
 
     &-text{
+
         border: none;
-        border-bottom: 1px solid skyblue;
+        border-bottom: 1px solid lightgrey;
         background-color: transparent;
-        font-size: 1.5em;
         text-transform: uppercase;
         text-align: center;
-        color: grey;
+        font-size: 2em;
+        color: lightgrey;
         padding: .3em;
+        font-family: 'Rubik', sans-serif;
+
     }
 
     &-text:focus, input:focus{

@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {Icon} from 'semantic-ui-react';
 import './style.scss';
 
-const Seven = ({seven, handleFadingCircleClick}) => {
+const Seven = React.memo(({seven, handleFadingCircleClick, addLevelToArray}) => {
   const history = useHistory();
   const wrapperArr = [];
 
@@ -22,6 +22,7 @@ const Seven = ({seven, handleFadingCircleClick}) => {
   }
 
   const handleIconClick = () => {
+    addLevelToArray('seven');
     history.push('/huit');
   }
 
@@ -47,6 +48,6 @@ const Seven = ({seven, handleFadingCircleClick}) => {
       </div>
     </div>
   )
-}
+})
 
 export default Seven;

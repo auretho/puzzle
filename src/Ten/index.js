@@ -1,10 +1,28 @@
-import React from 'react'; 
+import React, {useEffect, useRef} from 'react'; 
+import {useHistory} from 'react-router-dom';
 import './style.scss';
 
-const Ten = () => (
-  <div className="ten full-container">
-    Gagné!!! 
+const Ten = React.memo(({addLevelToArray, stopTimer}) => {
+  const history = useHistory();
+  const finalDiv = useRef();
+  
+  useEffect(() => {
+    finalDiv.current.focus();
+  })
+
+
+  const handleTenKeyPress = (evt) => {
+    if(evt.key === "x"){
+      history.push('/onze');
+      addLevelToArray('ten');
+      stopTimer();
+    }
+  }
+
+  return (
+  <div className="ten full-container" ref={finalDiv} onKeyPressCapture={handleTenKeyPress} tabIndex="0">
+      X
   </div>
-)
+)})
 
 export default Ten;

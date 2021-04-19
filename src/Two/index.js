@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './style.scss';
 
-const Two = () => {
+const Two = React.memo(({addLevelToArray}) => {
 
   let history = useHistory();
   const resArr = [];
@@ -19,8 +19,9 @@ const Two = () => {
       }
       return el
     })
-
+    console.log(resArr);
     if(resArr.length === 3){
+      addLevelToArray('two');
       history.push('/trois')
     }
   }
@@ -34,6 +35,6 @@ const Two = () => {
       </div>
     </div>
   )
-}
+})
 
 export default Two;

@@ -1,11 +1,13 @@
-.ten{
+.eleven{
+    flex-direction: column;
+    justify-content: center;
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
     color: lightgrey;
     font-family: 'Rubik', sans-serif;
-}
 
-.ten:focus{
-    outline-width: 0;
+    &-icon{
+        padding-top: 1em;
+    }
 }
