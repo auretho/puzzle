@@ -142,7 +142,7 @@ class App extends React.Component {
   render () {
 
     return <div className="app">
-        <Link to="//puzzle/">
+        <Link to="/puzzle/">
           <Icon name="chess knight" size="big" className="home-icon" color="grey"/>
         </Link>
 
