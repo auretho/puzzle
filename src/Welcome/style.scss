@@ -30,3 +30,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .welcome-circle{
+    height: 60px;
+    width: 60px;
+  }
+}

@@ -19,7 +19,7 @@ const Two = React.memo(({addLevelToArray}) => {
       }
       return el
     })
-    console.log(resArr);
+
     if(resArr.length === 3){
       addLevelToArray('two');
       history.push('/trois')

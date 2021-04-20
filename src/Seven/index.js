@@ -12,7 +12,6 @@ const Seven = React.memo(({seven, handleFadingCircleClick, addLevelToArray}) => 
     evt.target.parentElement.nextSibling.classList.remove('seven-hidden');
     evt.target.parentElement.classList.add('seven-hidden');
     wrapperArr.push(evt.target.parentElement);
-    
     if(wrapperArr.length === 7){
       const icon = document.querySelector('.seven-icon');
       setTimeout(() => {
@@ -31,13 +30,13 @@ const Seven = React.memo(({seven, handleFadingCircleClick, addLevelToArray}) => 
       <div className="seven-icon seven-icon-hidden">
         <Icon name="arrow alternate circle right outline"  size="large" onClick={handleIconClick}/>
       </div>
-      <div className="three-container">
+      <div className="seven-container">
         {seven.reverse().map((el, id) => {
           return(
-            <div key={id} className="seven-wrapper" onClick={handleSevenClick}>
+            <div key={id} className="seven-wrapper" >
               <div className="seven-wrapper-one" id={`wrapper-${id}`}>
                 <div className="seven-circle three-circle-letter grey-circle">{el}</div>
-                <div className="seven-circle circle-empty grey-circle" id={id}></div>
+                <div className="seven-circle circle-empty grey-circle" id={id} onClick={handleSevenClick}></div>
               </div>
               <div className="seven-wrapper-two seven-hidden" id={`wrapper-${id}`}>
                 <div className="seven-circle three-circle-letter seven-reversed grey-circle" onClick={handleFadingCircleClick} >{el}</div>

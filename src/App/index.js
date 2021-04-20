@@ -31,20 +31,20 @@ class App extends React.Component {
       {
         item: 5, 
         pos: 'absolute',
-        top: '50px',
-        left: '420px'
+        top: '30%',
+        left: '12%'
       },
       {
         item: "x", 
         pos: 'absolute',
-        top: '320px',
-        left: '240px'
+        top: '10%',
+        left: '40%'
       },
       {
         item: 4, 
         pos: 'absolute',
-        top: '180px',
-        left: '750px'
+        top: '45%',
+        left: '55%'
       },
     ],
     seven: ['m', 'e', 'm', 'o', 'i', 'r', 'e'],
@@ -52,32 +52,32 @@ class App extends React.Component {
       {
         item: "c", 
         pos: 'absolute',
-        top: '50px',
-        left: '620px'
+        top: '20%',
+        left: '75%'
       },
       {
         item: "r", 
         pos: 'absolute',
-        top: '320px',
-        left: '380px'
+        top: '15%',
+        left: '15%'
       },
       {
         item: "o", 
         pos: 'absolute',
-        top: '180px',
-        left: '950px'
+        top: '35%',
+        left: '55%'
       },
       {
         item: "i", 
         pos: 'absolute',
-        top: '300px',
-        left: '840px'
+        top: '55%',
+        left: '45%'
       },
       {
         item: "x", 
         pos: 'absolute',
-        top: '220px',
-        left: '550px'
+        top: '40%',
+        left: '15%'
       },
     ],
     timer: '',
