@@ -22,7 +22,7 @@ const Two = React.memo(({addLevelToArray}) => {
     console.log(resArr);
     if(resArr.length === 3){
       addLevelToArray('two');
-      history.push('/puzzle/trois')
+      history.push('/trois')
     }
   }
   

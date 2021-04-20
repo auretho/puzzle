@@ -23,7 +23,7 @@ const Seven = React.memo(({seven, handleFadingCircleClick, addLevelToArray}) => 
 
   const handleIconClick = () => {
     addLevelToArray('seven');
-    history.push('/puzzle/huit');
+    history.push('/huit');
   }
 
   return(

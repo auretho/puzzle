@@ -142,48 +142,48 @@ class App extends React.Component {
   render () {
 
     return <div className="app">
-        <Link to="/puzzle/">
+        <Link to="/">
           <Icon name="chess knight" size="big" className="home-icon" color="grey"/>
         </Link>
 
       <Switch>
-        <Route exact path="/puzzle/"><Welcome addLevelToArray={this.addLevelToArray} /></Route>
+        <Route exact path="/"><Welcome addLevelToArray={this.addLevelToArray} /></Route>
 
-        <Route path="/puzzle/un"><One addLevelToArray={this.addLevelToArray}/></Route>        
+        <Route path="/un"><One addLevelToArray={this.addLevelToArray}/></Route>        
         
-        <Route path="/puzzle/deux"><Two addLevelToArray={this.addLevelToArray}/></Route>        
+        <Route path="/deux"><Two addLevelToArray={this.addLevelToArray}/></Route>        
         
-        <Route path="/puzzle/trois">
+        <Route path="/trois">
           <Three letters={this.state.letters} handleFadingCircleClick={this.handleFadingCircleClick}/>
           <InputThree input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route> 
         
-        <Route path="/puzzle/quatre"><Four addLevelToArray={this.addLevelToArray}/></Route>
+        <Route path="/quatre"><Four addLevelToArray={this.addLevelToArray}/></Route>
         
-        <Route path="/puzzle/cinq"><Five addLevelToArray={this.addLevelToArray}/></Route>        
+        <Route path="/cinq"><Five addLevelToArray={this.addLevelToArray}/></Route>        
         
-        <Route path="/puzzle/six">
+        <Route path="/six">
           <Six six={this.state.six} handleFadingCircleClick={this.handleFadingCircleClick}/>
           <InputSix input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route>
 
-        <Route path="/puzzle/sept"><Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick} addLevelToArray={this.addLevelToArray}/></Route>
+        <Route path="/sept"><Seven seven={this.state.seven} handleFadingCircleClick={this.handleFadingCircleClick} addLevelToArray={this.addLevelToArray}/></Route>
         
-        <Route path="/puzzle/huit">
+        <Route path="/huit">
           <Eight />
           <InputEight input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route>
         
-        <Route path="/puzzle/neuf">
+        <Route path="/neuf">
           <Nine nine={this.state.nine}/>
           <InputNine input={this.state.input} handleInputChange={this.handleInputChange} addLevelToArray={this.addLevelToArray}/>
         </Route> 
 
-        <Route path="/puzzle/dix">
+        <Route path="/dix">
           <Ten addLevelToArray={this.addLevelToArray} stopTimer={this.stopTimer}/>
         </Route>    
 
-        <Route path="/puzzle/onze">
+        <Route path="/onze">
           <Eleven timer={this.state.timer}/>
         </Route>  
       </Switch>

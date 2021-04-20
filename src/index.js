@@ -6,7 +6,7 @@ import App from './App/index.js';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Router exact path="/puzzle/">
+  <Router exact path="/">
     <App />
   </Router>,
   document.getElementById('root')

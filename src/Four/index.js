@@ -35,7 +35,7 @@ const Four = React.memo(({addLevelToArray}) => {
     if(circlesArr.length === 5){
       setTimeout(() => {
         addLevelToArray('four');
-        return history.push('/puzzle/cinq');
+        return history.push('/cinq');
       }, 500);
     }
   }
